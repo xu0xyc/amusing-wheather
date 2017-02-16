@@ -7,6 +7,9 @@ APP包含三大模块。
 SQLite数据库：
 LitePal(https://github.com/LitePalFramework/LitePal)
 
+定位：
+百度LBS()
+
 
 二、UI界面(屏幕适配)
 
