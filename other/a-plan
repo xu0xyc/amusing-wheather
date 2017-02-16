@@ -16,6 +16,9 @@ LitePal(https://github.com/LitePalFramework/LitePal)
 见面风格：
 MaterialDesign(android.support.design)
 
+Toolbar（http://www.cnblogs.com/bvin/p/4311240.html   http://www.jianshu.com/p/b3a40a55826e）
+CollapsingToolbarLayout（http://www.open-open.com/lib/view/open1438265746378.html   http://www.jianshu.com/p/06c0ae8d9a96）
+
 百分比布局：
 AutoLayout(https://github.com/hongyangAndroid/AndroidAutoLayout)
 
