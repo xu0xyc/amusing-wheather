@@ -7,42 +7,111 @@
     tools:context="com.charlie.wheather.MainActivity">
 
     <android.support.design.widget.AppBarLayout
+        android:id="@+id/appbar_layout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="@dimen/dp_200"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
 
         <android.support.design.widget.CollapsingToolbarLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
+            android:layout_height="match_parent"
+            app:contentScrim="@color/colorPrimary"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed"
+            app:titleEnabled="false">
 
             <ImageView
+                android:id="@+id/iv_head"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@mipmap/sample"
+                app:layout_collapseMode="parallax"
+                app:layout_collapseParallaxMultiplier="0.7" />
 
             <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
-                app:theme="@style/Theme.AppCompat.DayNight.DarkActionBar"
-                app:popupTheme="@style/Widget.AppCompat.Light.ListPopupWindow"
-                />
-
+                app:layout_collapseMode="pin"
+                app:navigationIcon="@mipmap/ic_launcher"
+                app:popupTheme="@style/AppTheme.PopupOverlay" />
 
         </android.support.design.widget.CollapsingToolbarLayout>
-
-
     </android.support.design.widget.AppBarLayout>
 
-
-    <android.support.v7.widget.RecyclerView
+    <android.support.v4.widget.DrawerLayout
+        android:id="@+id/drawer_layout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
+        <android.support.v4.widget.NestedScrollView
+            android:id="@+id/nsv_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-    </android.support.v7.widget.RecyclerView>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
 
+                <android.support.v7.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
+                    app:cardElevation="@dimen/dp_10"
+                    app:cardCornerRadius="@dimen/dp_10">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="当前天气" />
+
+                </android.support.v7.widget.CardView>
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    app:cardElevation="@dimen/dp_10"
+                    app:cardCornerRadius="@dimen/dp_10">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="空气指数" />
+
+                </android.support.v7.widget.CardView>
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
+                    app:cardElevation="@dimen/dp_10"
+                    app:cardCornerRadius="@dimen/dp_10">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="建议指导" />
+
+                </android.support.v7.widget.CardView>
+            </LinearLayout>
+        </android.support.v4.widget.NestedScrollView>
+
+        <fragment
+            android:name="com.charlie.wheather.fragment.AddCityFragment"
+            android:id="@+id/frag_add_city"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            />
+    </android.support.v4.widget.DrawerLayout>
 
     <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab_asr"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dp_10"
+        android:src="@mipmap/ic_launcher"
+        app:layout_anchor="@id/drawer_layout"
+        app:layout_anchorGravity="bottom|end" />
 
 </android.support.design.widget.CoordinatorLayout>

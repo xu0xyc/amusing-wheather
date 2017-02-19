@@ -18,6 +18,11 @@ MaterialDesign(android.support.design)
 
 Toolbar（http://www.cnblogs.com/bvin/p/4311240.html   http://www.jianshu.com/p/b3a40a55826e）
 CollapsingToolbarLayout（http://www.open-open.com/lib/view/open1438265746378.html   http://www.jianshu.com/p/06c0ae8d9a96）
+CoordinatorLayout[AppBarLayout、FloatingActionButton、SnackBar]（http://www.open-open.com/lib/view/open1437312265428.html   http://blog.csdn.net/xyz_lmn/article/details/48055919）
+RecycleView和NestedScrollView
+CardView(http://blog.csdn.net/birdsaction/article/details/45197499   http://www.androidchina.net/3754.html)
+NavigationView(http://www.jianshu.com/p/76e30f87a4ed)
+activity跳转过度动画（http://blog.csdn.net/qq_23547831/article/details/51821159）
 
 百分比布局：
 AutoLayout(https://github.com/hongyangAndroid/AndroidAutoLayout)
