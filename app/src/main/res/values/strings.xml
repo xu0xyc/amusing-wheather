@@ -4,8 +4,16 @@
 
     <string name="open_drawer">打开抽屉</string>
     <string name="close_drawer">关闭抽屉</string>
+    <string name="drawer_title">添加城市</string>
 
     <string name="drawer_fragment_title">添加城市</string>
     <string name="drawer_fragment_search">搜索城市(中文/拼音)</string>
     <string name="drawer_fragment_recommand">热门城市</string>
+
+    <string name="settings_title">设置</string>
+    <string name="settings_auto">自动更新</string>
+    <string name="settings_interval">更新间隔</string>
+    <string name="settings_interval_h">8小时</string>
+    <string name="settings_update">版本更新</string>
+    <string name="settings_about">关于</string>
 </resources>

@@ -13,6 +13,7 @@
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
 
         <android.support.design.widget.CollapsingToolbarLayout
+            android:id="@+id/collapse_layout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             app:contentScrim="@color/colorPrimary"
@@ -110,7 +111,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/dp_10"
-        android:src="@mipmap/ic_launcher"
+        android:src="@mipmap/ic_voice"
         app:layout_anchor="@id/drawer_layout"
         app:layout_anchorGravity="bottom|end" />
 
