@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="FlowLayout">
+        <attr name="fGravity" format="enum">
+            <enum name="left" value="-1"/>
+            <enum name="center" value="0"/>
+            <enum name="right" value="1"/>
+        </attr>
+    </declare-styleable>
+    
+    <declare-styleable name="TagFlowLayout">
+        <attr name="maxCheckedCount" format="integer" />
+        <attr name="checkedAutoEffect" format="boolean" />
+    </declare-styleable>
+
+</resources>

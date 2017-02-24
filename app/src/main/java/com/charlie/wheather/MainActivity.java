@@ -33,8 +33,8 @@ public class MainActivity extends AppCompatActivity implements DrawerLayout.Draw
         mToggle = new ActionBarDrawerToggle(this, drawer_layout, R.string.open_drawer, R.string.close_drawer);
         drawer_layout.addDrawerListener(mToggle);
         drawer_layout.addDrawerListener(this);
-    }
 
+    }
 
     @Override
     public void onPostCreate(Bundle savedInstanceState) {
@@ -93,4 +93,5 @@ public class MainActivity extends AppCompatActivity implements DrawerLayout.Draw
     public void onDrawerStateChanged(int newState) {
         appbar_layout.setExpanded(false, true);
     }
+
 }

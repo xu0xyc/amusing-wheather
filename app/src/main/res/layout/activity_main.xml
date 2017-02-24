@@ -4,18 +4,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
     tools:context="com.charlie.wheather.MainActivity">
 
     <android.support.design.widget.AppBarLayout
         android:id="@+id/appbar_layout"
         android:layout_width="match_parent"
         android:layout_height="@dimen/dp_200"
+        android:fitsSystemWindows="true"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
 
         <android.support.design.widget.CollapsingToolbarLayout
             android:id="@+id/collapse_layout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            app:statusBarScrim="@android:color/transparent"
             app:contentScrim="@color/colorPrimary"
             app:layout_scrollFlags="scroll|exitUntilCollapsed"
             app:titleEnabled="false">
@@ -46,64 +49,64 @@
         android:layout_height="match_parent"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-        <android.support.v4.widget.NestedScrollView
-            android:id="@+id/nsv_content"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <LinearLayout
+            <android.support.v4.widget.NestedScrollView
+                android:id="@+id/nsv_content"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
+                android:layout_height="match_parent">
 
-                <android.support.v7.widget.CardView
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="300dp"
-                    app:cardElevation="@dimen/dp_10"
-                    app:cardCornerRadius="@dimen/dp_10">
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="当前天气" />
+                    <android.support.v7.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="300dp"
+                        app:cardCornerRadius="@dimen/dp_10"
+                        app:cardElevation="@dimen/dp_10">
 
-                </android.support.v7.widget.CardView>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="当前天气" />
 
-                <android.support.v7.widget.CardView
-                    android:layout_width="match_parent"
-                    android:layout_height="100dp"
-                    app:cardElevation="@dimen/dp_10"
-                    app:cardCornerRadius="@dimen/dp_10">
+                    </android.support.v7.widget.CardView>
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="空气指数" />
+                    <android.support.v7.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp"
+                        app:cardCornerRadius="@dimen/dp_10"
+                        app:cardElevation="@dimen/dp_10">
 
-                </android.support.v7.widget.CardView>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="空气指数" />
 
-                <android.support.v7.widget.CardView
-                    android:layout_width="match_parent"
-                    android:layout_height="300dp"
-                    app:cardElevation="@dimen/dp_10"
-                    app:cardCornerRadius="@dimen/dp_10">
+                    </android.support.v7.widget.CardView>
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="建议指导" />
+                    <android.support.v7.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="300dp"
+                        app:cardCornerRadius="@dimen/dp_10"
+                        app:cardElevation="@dimen/dp_10">
 
-                </android.support.v7.widget.CardView>
-            </LinearLayout>
-        </android.support.v4.widget.NestedScrollView>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="建议指导" />
+
+                    </android.support.v7.widget.CardView>
+                </LinearLayout>
+            </android.support.v4.widget.NestedScrollView>
 
         <fragment
-            android:name="com.charlie.wheather.fragment.AddCityFragment"
             android:id="@+id/frag_add_city"
+            android:name="com.charlie.wheather.fragment.AddCityFragment"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_gravity="start"
-            />
+            android:layout_gravity="start" />
+
     </android.support.v4.widget.DrawerLayout>
 
     <android.support.design.widget.FloatingActionButton

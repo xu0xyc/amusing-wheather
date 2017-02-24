@@ -1,7 +1,7 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+    <style name="Base.AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
@@ -12,11 +12,14 @@
         <item name="drawerArrowStyle">@style/AppTheme.MyDrawerArrowStyle</item>
     </style>
 
-    <style name="AppTheme.PopupOverlay" parent="AppTheme"></style>
+    <style name="AppTheme" parent="Base.AppTheme" />
+
+    <style name="AppTheme.PopupOverlay" parent="AppTheme" />
 
     <!-- 改变DrawerToggle默认的DrawerArrow的样式 -->
     <style name="AppTheme.MyDrawerArrowStyle" parent="Widget.AppCompat.DrawerArrowToggle">
         <item name="spinBars">true</item><!-- true旋转样式 false非旋转 -->
         <item name="color">@color/white</item>
     </style>
+
 </resources>
