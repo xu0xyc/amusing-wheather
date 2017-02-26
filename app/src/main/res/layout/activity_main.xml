@@ -10,7 +10,7 @@
     <android.support.design.widget.AppBarLayout
         android:id="@+id/appbar_layout"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/dp_200"
+        android:layout_height="@dimen/dp_230"
         android:fitsSystemWindows="true"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
 
@@ -35,10 +35,21 @@
             <android.support.v7.widget.Toolbar
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
-                android:layout_height="?attr/actionBarSize"
+                android:layout_height="@dimen/dp_86"
+                android:minHeight="?attr/actionBarSize"
+                android:gravity="top"
+                app:titleMarginTop="@dimen/dp_13"
                 app:layout_collapseMode="pin"
                 app:navigationIcon="@mipmap/ic_launcher"
                 app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+            <android.support.design.widget.TabLayout
+                android:id="@+id/tab_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal|bottom"
+                app:tabMode="scrollable"
+                />
 
         </android.support.design.widget.CollapsingToolbarLayout>
     </android.support.design.widget.AppBarLayout>
@@ -49,56 +60,10 @@
         android:layout_height="match_parent"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-            <android.support.v4.widget.NestedScrollView
-                android:id="@+id/nsv_content"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical">
-
-                    <android.support.v7.widget.CardView
-                        android:layout_width="match_parent"
-                        android:layout_height="300dp"
-                        app:cardCornerRadius="@dimen/dp_10"
-                        app:cardElevation="@dimen/dp_10">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="当前天气" />
-
-                    </android.support.v7.widget.CardView>
-
-                    <android.support.v7.widget.CardView
-                        android:layout_width="match_parent"
-                        android:layout_height="100dp"
-                        app:cardCornerRadius="@dimen/dp_10"
-                        app:cardElevation="@dimen/dp_10">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="空气指数" />
-
-                    </android.support.v7.widget.CardView>
-
-                    <android.support.v7.widget.CardView
-                        android:layout_width="match_parent"
-                        android:layout_height="300dp"
-                        app:cardCornerRadius="@dimen/dp_10"
-                        app:cardElevation="@dimen/dp_10">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="建议指导" />
-
-                    </android.support.v7.widget.CardView>
-                </LinearLayout>
-            </android.support.v4.widget.NestedScrollView>
+        <android.support.v4.view.ViewPager
+            android:id="@+id/view_pager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
 
         <fragment
             android:id="@+id/frag_add_city"
