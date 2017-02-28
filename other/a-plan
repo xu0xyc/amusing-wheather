@@ -5,7 +5,7 @@ APP包含三大模块。
 一、Android系统接口调用
 
 SQLite数据库：
-LitePal(https://github.com/LitePalFramework/LitePal)
+LitePal(http://www.jianshu.com/p/557682e0a9f0   https://github.com/LitePalFramework/LitePal)
 
 定位：
 百度LBS()
@@ -32,7 +32,7 @@ AutoLayout(https://github.com/hongyangAndroid/AndroidAutoLayout)
 三、服务器接口
 
 http请求:
-OkGo(https://github.com/jeasonlzy/okhttp-OkGo)
+OkGo(http://blog.csdn.net/sky_pjf/article/details/52781025   http://blog.csdn.net/sky_pjf/article/details/52875304   https://github.com/jeasonlzy/okhttp-OkGo)
 
 响应式编程：
 RxAndroid(https://github.com/ReactiveX/RxAndroid)

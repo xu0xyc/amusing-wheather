@@ -7,6 +7,7 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
         <item name="android:windowBackground">@color/windowBackground</item>
+        <item name="android:windowIsTranslucent">true</item>
 
         <!-- 改变DrawerToggle默认的DrawerArrow的样式 -->
         <item name="drawerArrowStyle">@style/AppTheme.MyDrawerArrowStyle</item>

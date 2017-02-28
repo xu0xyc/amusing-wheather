@@ -15,10 +15,12 @@
             app:cardCornerRadius="@dimen/dp_10"
             app:cardElevation="@dimen/dp_10">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="当前天气" />
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="fitXY"
+                android:src="@mipmap/demo1"
+                />
 
         </android.support.v7.widget.CardView>
 
@@ -28,10 +30,27 @@
             app:cardCornerRadius="@dimen/dp_10"
             app:cardElevation="@dimen/dp_10">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="空气指数" />
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="fitXY"
+                android:src="@mipmap/demo2"
+                />
+
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            app:cardCornerRadius="@dimen/dp_10"
+            app:cardElevation="@dimen/dp_10">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="fitXY"
+                android:src="@mipmap/demo3"
+                />
 
         </android.support.v7.widget.CardView>
 
@@ -41,12 +60,15 @@
             app:cardCornerRadius="@dimen/dp_10"
             app:cardElevation="@dimen/dp_10">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="建议指导" />
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="fitXY"
+                android:src="@mipmap/demo4"
+                />
 
         </android.support.v7.widget.CardView>
+
     </LinearLayout>
 
 </android.support.v4.widget.NestedScrollView>

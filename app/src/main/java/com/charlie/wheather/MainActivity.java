@@ -5,7 +5,6 @@ import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.TabLayout;
-import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
@@ -14,16 +13,18 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.MotionEvent;
 import android.view.View;
-import android.view.ViewGroup;
 
 import com.charlie.wheather.adapter.CityWeatherPagerAdapter;
+import com.charlie.wheather.common.Constants;
 import com.charlie.wheather.pojo.WeatherInfo;
+import com.charlie.wheather.utils.LogUtil;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity implements DrawerLayout.DrawerListener {
+public class MainActivity extends AppCompatActivity implements DrawerLayout.DrawerListener, AppBarLayout.OnOffsetChangedListener {
 
     private Toolbar toolbar;
     private DrawerLayout drawer_layout;
@@ -33,6 +34,9 @@ public class MainActivity extends AppCompatActivity implements DrawerLayout.Draw
 
     private ActionBarDrawerToggle mToggle;
     private FragmentPagerAdapter mAdapter;
+
+    private boolean isDrawerOpened;
+    private int mAppBarVerticalOffset;//appbar滑动的距离 全展开为0，全折叠为getTotalScrollRange
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,11 +53,11 @@ public class MainActivity extends AppCompatActivity implements DrawerLayout.Draw
         weatherInfos.add(new WeatherInfo("北京"));
         weatherInfos.add(new WeatherInfo("上海"));
         weatherInfos.add(new WeatherInfo("深圳"));
-//        weatherInfos.add(new WeatherInfo("广州"));
-//        weatherInfos.add(new WeatherInfo("郑州"));
-//        weatherInfos.add(new WeatherInfo("杭州"));
-//        weatherInfos.add(new WeatherInfo("乌鲁木齐"));
-//        weatherInfos.add(new WeatherInfo("吐鲁番"));
+        weatherInfos.add(new WeatherInfo("广州"));
+        weatherInfos.add(new WeatherInfo("郑州"));
+        weatherInfos.add(new WeatherInfo("杭州"));
+        weatherInfos.add(new WeatherInfo("乌鲁木齐"));
+        weatherInfos.add(new WeatherInfo("吐鲁番"));
 
         mAdapter = new CityWeatherPagerAdapter(getSupportFragmentManager(), weatherInfos);
         view_pager.setAdapter(mAdapter);
@@ -63,6 +67,7 @@ public class MainActivity extends AppCompatActivity implements DrawerLayout.Draw
         mToggle = new ActionBarDrawerToggle(this, drawer_layout, R.string.open_drawer, R.string.close_drawer);
         drawer_layout.addDrawerListener(mToggle);
         drawer_layout.addDrawerListener(this);
+        appbar_layout.addOnOffsetChangedListener(this);
 
     }
 
@@ -100,6 +105,7 @@ public class MainActivity extends AppCompatActivity implements DrawerLayout.Draw
     protected void onDestroy() {
         drawer_layout.removeDrawerListener(mToggle);
         drawer_layout.removeDrawerListener(this);
+        appbar_layout.removeOnOffsetChangedListener(this);
 
         super.onDestroy();
     }
@@ -111,11 +117,13 @@ public class MainActivity extends AppCompatActivity implements DrawerLayout.Draw
 
     @Override
     public void onDrawerOpened(View drawerView) {
+        isDrawerOpened = true;
         toolbar.setTitle(R.string.drawer_title);
     }
 
     @Override
     public void onDrawerClosed(View drawerView) {
+        isDrawerOpened = false;
         toolbar.setTitle(R.string.app_name);
     }
 
@@ -124,4 +132,21 @@ public class MainActivity extends AppCompatActivity implements DrawerLayout.Draw
         appbar_layout.setExpanded(false, true);
     }
 
+    @Override
+    public void onOffsetChanged(AppBarLayout appBarLayout, int verticalOffset) {
+        LogUtil.d(Constants.LOG_TAG, "verticalOffset of appbar :"+verticalOffset);
+        mAppBarVerticalOffset = -verticalOffset;
+    }
+
+    @Override
+    public boolean dispatchTouchEvent(MotionEvent ev) {
+        LogUtil.d(Constants.LOG_TAG, "Touch event action of MainActivity :"+ev.getAction());
+
+        if(!isDrawerOpened && MotionEvent.ACTION_UP == ev.getAction()){
+            int totalScrollRange = appbar_layout.getTotalScrollRange();
+            boolean needExpanded = mAppBarVerticalOffset>totalScrollRange/2 ? false : true;
+            appbar_layout.setExpanded(needExpanded, true);
+        }
+        return super.dispatchTouchEvent(ev);
+    }
 }
