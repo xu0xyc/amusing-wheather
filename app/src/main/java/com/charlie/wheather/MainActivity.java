@@ -18,7 +18,7 @@ import android.view.View;
 
 import com.charlie.wheather.adapter.CityWeatherPagerAdapter;
 import com.charlie.wheather.common.Constants;
-import com.charlie.wheather.pojo.WeatherInfo;
+import com.charlie.wheather.pojo.WeatherEntity;
 import com.charlie.wheather.utils.LogUtil;
 
 import java.util.ArrayList;
@@ -49,17 +49,17 @@ public class MainActivity extends AppCompatActivity implements DrawerLayout.Draw
         tab_layout = (TabLayout) findViewById(R.id.tab_layout);
         view_pager = (ViewPager) findViewById(R.id.view_pager);
 
-        List<WeatherInfo> weatherInfos = new ArrayList<>();
-        weatherInfos.add(new WeatherInfo("北京"));
-        weatherInfos.add(new WeatherInfo("上海"));
-        weatherInfos.add(new WeatherInfo("深圳"));
-        weatherInfos.add(new WeatherInfo("广州"));
-        weatherInfos.add(new WeatherInfo("郑州"));
-        weatherInfos.add(new WeatherInfo("杭州"));
-        weatherInfos.add(new WeatherInfo("乌鲁木齐"));
-        weatherInfos.add(new WeatherInfo("吐鲁番"));
+        List<WeatherEntity> weatherEntities = new ArrayList<>();
+        weatherEntities.add(new WeatherEntity("北京"));
+        weatherEntities.add(new WeatherEntity("上海"));
+        weatherEntities.add(new WeatherEntity("深圳"));
+        weatherEntities.add(new WeatherEntity("广州"));
+        weatherEntities.add(new WeatherEntity("郑州"));
+        weatherEntities.add(new WeatherEntity("杭州"));
+        weatherEntities.add(new WeatherEntity("乌鲁木齐"));
+        weatherEntities.add(new WeatherEntity("吐鲁番"));
 
-        mAdapter = new CityWeatherPagerAdapter(getSupportFragmentManager(), weatherInfos);
+        mAdapter = new CityWeatherPagerAdapter(getSupportFragmentManager(), weatherEntities);
         view_pager.setAdapter(mAdapter);
         tab_layout.setupWithViewPager(view_pager);
 

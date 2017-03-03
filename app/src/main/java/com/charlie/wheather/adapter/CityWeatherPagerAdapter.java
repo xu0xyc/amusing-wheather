@@ -5,7 +5,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
 import com.charlie.wheather.fragment.CityWeatherFragment;
-import com.charlie.wheather.pojo.WeatherInfo;
+import com.charlie.wheather.pojo.WeatherEntity;
 
 import java.util.List;
 
@@ -15,11 +15,11 @@ import java.util.List;
  */
 public class CityWeatherPagerAdapter extends FragmentPagerAdapter {
 
-    private List<WeatherInfo> mWeatherInfos;
+    private List<WeatherEntity> mWeatherEntities;
 
-    public CityWeatherPagerAdapter(FragmentManager fm, List<WeatherInfo> infos) {
+    public CityWeatherPagerAdapter(FragmentManager fm, List<WeatherEntity> infos) {
         super(fm);
-        mWeatherInfos = infos;
+        mWeatherEntities = infos;
     }
 
     @Override
@@ -29,12 +29,12 @@ public class CityWeatherPagerAdapter extends FragmentPagerAdapter {
 
     @Override
     public int getCount() {
-        return mWeatherInfos == null ? 0 : mWeatherInfos.size();
+        return mWeatherEntities == null ? 0 : mWeatherEntities.size();
     }
 
     @Override
     public CharSequence getPageTitle(int position) {
 
-        return mWeatherInfos.get(position).city;
+        return mWeatherEntities.get(position).city;
     }
 }
