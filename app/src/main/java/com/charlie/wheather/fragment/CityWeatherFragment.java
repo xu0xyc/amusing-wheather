@@ -10,7 +10,7 @@ import android.view.ViewGroup;
 import com.charlie.wheather.R;
 
 /**
- * Created by tech on 2017/2/26.
+ * Created by Charlie on 2017/2/26.
  */
 public class CityWeatherFragment extends Fragment{
     @Nullable

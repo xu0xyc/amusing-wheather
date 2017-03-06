@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.view.GravityCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -18,6 +19,7 @@ import android.view.View;
 
 import com.charlie.wheather.adapter.CityWeatherPagerAdapter;
 import com.charlie.wheather.common.Constants;
+import com.charlie.wheather.pojo.Cities;
 import com.charlie.wheather.pojo.WeatherEntity;
 import com.charlie.wheather.utils.LogUtil;
 
@@ -148,5 +150,13 @@ public class MainActivity extends AppCompatActivity implements DrawerLayout.Draw
             appbar_layout.setExpanded(needExpanded, true);
         }
         return super.dispatchTouchEvent(ev);
+    }
+
+    /**
+     * 根据添加的城市，关闭drawer
+     * @param cities
+     */
+    public void closeDrawer(Cities cities) {
+        drawer_layout.closeDrawer(GravityCompat.START);
     }
 }

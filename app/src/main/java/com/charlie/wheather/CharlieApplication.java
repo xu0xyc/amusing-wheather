@@ -16,10 +16,12 @@ public class CharlieApplication extends Application {
     public void onCreate() {
         super.onCreate();
 
-        //配置log
+        // 配置log
         LogUtil.configue(getApplicationContext(), LogUtil.PLACE_LOGCAT, android.util.Log.DEBUG);
 
-        //配置LitePal数据库
+        // 配置LitePal数据库
         LitePal.initialize(this);
     }
+
+
 }
