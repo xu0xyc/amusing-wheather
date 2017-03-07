@@ -22,8 +22,8 @@ import android.widget.TextView;
 import com.charlie.wheather.MainActivity;
 import com.charlie.wheather.R;
 import com.charlie.wheather.adapter.CityRecyclerAdapter;
-import com.charlie.wheather.pojo.Cities;
-import com.charlie.wheather.utils.LogUtil;
+import com.charlie.wheather.pojo.City;
+import com.charlie.wheather.util.LogUtil;
 import com.charlie.wheather.widget.DividerItemDecoration;
 import com.charlie.wheather.widget.flowlayout.TagAdapter;
 import com.charlie.wheather.widget.flowlayout.TagFlowLayout;
@@ -49,7 +49,7 @@ public class AddCityFragment extends Fragment implements TextWatcher, TextView.O
     private LayoutInflater mInflater;
     private CityRecyclerAdapter mRecycleAdapter;
 
-    private List<Cities> mCities;
+    private List<City> mCities;
 
     @Nullable
     @Override
@@ -85,8 +85,8 @@ public class AddCityFragment extends Fragment implements TextWatcher, TextView.O
         if (!TextUtils.isEmpty(s)) {
             if(null != mCities) mCities.clear();
 
-            mCities = DataSupport.where("city_en like ?", s+"%").find(Cities.class);
-            mCities.addAll(DataSupport.where("city_zh like ?", s+"%").find(Cities.class));
+            mCities = DataSupport.where("city_en like ?", s+"%").find(City.class);
+            mCities.addAll(DataSupport.where("city_zh like ?", s+"%").find(City.class));
 
             LogUtil.d(TAG, "mCities:"+mCities.size());
             if(!mCities.isEmpty()){

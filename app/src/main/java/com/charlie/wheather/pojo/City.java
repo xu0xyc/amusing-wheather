@@ -6,7 +6,7 @@ import org.litepal.crud.DataSupport;
  * 根据china-city-list.json生成china.db需要的litepal的类
  * Created by Chalie on 2017/3/3.
  */
-public class Cities extends DataSupport{
+public class City extends DataSupport{
 
     private String weather_id;
 

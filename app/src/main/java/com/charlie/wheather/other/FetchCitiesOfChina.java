@@ -1,7 +1,7 @@
 package com.charlie.wheather.other;
 
 import com.charlie.wheather.common.Constants;
-import com.charlie.wheather.utils.LogUtil;
+import com.charlie.wheather.util.LogUtil;
 
 import org.litepal.crud.DataSupport;
 

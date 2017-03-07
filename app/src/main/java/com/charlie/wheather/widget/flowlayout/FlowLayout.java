@@ -8,7 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.charlie.wheather.R;
-import com.charlie.wheather.utils.LogUtil;
+import com.charlie.wheather.util.LogUtil;
 
 import java.util.ArrayList;
 import java.util.List;

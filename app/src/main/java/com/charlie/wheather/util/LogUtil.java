@@ -1,4 +1,4 @@
-package com.charlie.wheather.utils;
+package com.charlie.wheather.util;
 
 import android.content.Context;
 import android.os.Environment;
@@ -24,7 +24,14 @@ public class LogUtil {
     private static int mLogPlace = PLACE_NONE;
     private static int mLogLevel = android.util.Log.DEBUG;
     private static String mFileName = "charlie.log";
-    private static SimpleDateFormat mDateFormat;
+
+    // 用于打印时间戳
+    private static ThreadLocal<SimpleDateFormat> sDateFormatTL = new ThreadLocal<SimpleDateFormat>(){
+        @Override
+        protected SimpleDateFormat initialValue() {
+            return new SimpleDateFormat("yyyy-MM-dd HH:mm:ss:SSS");
+        }
+    };
 
     /**
      * 相关配置 (在Application中全局配置一次就行)
@@ -138,10 +145,6 @@ public class LogUtil {
             return;
         }
 
-        if (null == mDateFormat) {
-            mDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss:SSS");
-        }
-
         String strLevel = null;
         switch (level) {
             case android.util.Log.DEBUG:
@@ -160,12 +163,13 @@ public class LogUtil {
                 strLevel = "CHARLIE";
         }
 
+        SimpleDateFormat sdf = sDateFormatTL.get();
         FileWriter fw = null;
         try {
             File logFile = new File(mContext.getExternalCacheDir(), mFileName);
             fw = new FileWriter(logFile, true);
             StringBuffer sb = new StringBuffer();
-            sb.append(mDateFormat.format(new Date())).append('\t')
+            sb.append(sdf.format(new Date())).append('\t')
                     .append(strLevel).append('\t')
                     .append(tag).append('\t')
                     .append(msg).append('\r').append('\n');

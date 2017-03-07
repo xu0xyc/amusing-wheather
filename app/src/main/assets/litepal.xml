@@ -32,7 +32,7 @@
         </list>
     -->
     <list>
-        <mapping class="com.charlie.wheather.pojo.Cities" />
+        <mapping class="com.charlie.wheather.pojo.City" />
     </list>
 
     <!--

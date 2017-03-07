@@ -19,9 +19,9 @@ import android.view.View;
 
 import com.charlie.wheather.adapter.CityWeatherPagerAdapter;
 import com.charlie.wheather.common.Constants;
-import com.charlie.wheather.pojo.Cities;
+import com.charlie.wheather.pojo.City;
 import com.charlie.wheather.pojo.WeatherEntity;
-import com.charlie.wheather.utils.LogUtil;
+import com.charlie.wheather.util.LogUtil;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -154,9 +154,9 @@ public class MainActivity extends AppCompatActivity implements DrawerLayout.Draw
 
     /**
      * 根据添加的城市，关闭drawer
-     * @param cities
+     * @param city
      */
-    public void closeDrawer(Cities cities) {
+    public void closeDrawer(City city) {
         drawer_layout.closeDrawer(GravityCompat.START);
     }
 }

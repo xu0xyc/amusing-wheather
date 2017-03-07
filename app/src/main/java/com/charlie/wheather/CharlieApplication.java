@@ -2,7 +2,7 @@ package com.charlie.wheather;
 
 import android.app.Application;
 
-import com.charlie.wheather.utils.LogUtil;
+import com.charlie.wheather.util.LogUtil;
 
 import org.litepal.LitePal;
 

@@ -7,7 +7,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.charlie.wheather.R;
-import com.charlie.wheather.pojo.Cities;
+import com.charlie.wheather.pojo.City;
 
 import java.util.List;
 
@@ -18,9 +18,9 @@ import java.util.List;
 public class CityRecyclerAdapter extends RecyclerView.Adapter<CityRecyclerAdapter.MyViewHolder> {
 
     private Context mContext;
-    private List<Cities> mCities;
+    private List<City> mCities;
 
-    public CityRecyclerAdapter(Context ctx, List<Cities> cities) {
+    public CityRecyclerAdapter(Context ctx, List<City> cities) {
         mContext = ctx;
         mCities = cities;
     }
@@ -44,10 +44,10 @@ public class CityRecyclerAdapter extends RecyclerView.Adapter<CityRecyclerAdapte
 
     @Override
     public void onBindViewHolder(final MyViewHolder holder, int position) {
-        Cities cities = mCities.get(position);
-        String city_zh = cities.getCity_zh();
-        String leader_zh = cities.getLeader_zh();
-        String province_zh = cities.getProvince_zh();
+        City city = mCities.get(position);
+        String city_zh = city.getCity_zh();
+        String leader_zh = city.getLeader_zh();
+        String province_zh = city.getProvince_zh();
         if(city_zh.equals(leader_zh)){
             if(leader_zh.equals(province_zh)){
                 holder.tv.setText(city_zh);
